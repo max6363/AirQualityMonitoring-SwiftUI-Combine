@@ -19,25 +19,25 @@ enum AirQualityIndexClassification {
 }
 
 class AirQualityIndexClassifier {
-    static func classifyAirQualityIndex(aqi: Float) -> AirQualityIndexClassification {
+    static func classifyAirQualityIndex(aqi: Double) -> AirQualityIndexClassification {
         switch aqi {
         
         case 0...50:
             return .good
         
-        case 51...100:
+        case 50...100:
             return .satisfactory
         
-        case 101...200:
+        case 100...200:
             return .moderate
         
-        case 201...300:
+        case 200...300:
             return .poor
         
-        case 301...400:
+        case 300...400:
             return .veryPoor
         
-        case 401...500:
+        case 400...500:
             return .severe
         
         default:

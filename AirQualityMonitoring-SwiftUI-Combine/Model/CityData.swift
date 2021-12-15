@@ -7,14 +7,39 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
 struct CityDataResponse: Codable {
     let city: String
-    let aqi: Float
+    let aqi: Double
 }
 
 class CityData: Identifiable {
     let id: UUID = UUID()
     var name: String = ""
-    var aqi: Float = 0.0
+    var aqi: Double = 0.0
+}
+
+extension CityData {
+    var airQuality: AirQualityIndexClassification {
+        get {
+            return AirQualityIndexClassifier
+                .classifyAirQualityIndex(aqi: self.aqi)
+        }
+    }
+    
+    var aqiColor: Color {
+        get {
+            return AirQualityIndexInfoClassifier
+                .color(index: self.airQuality)
+                .suColor
+        }
+    }
+    
+    var aqiDescriptionText: String {
+        get {
+            return AirQualityIndexInfoClassifier
+                .text(index: self.airQuality)
+        }
+    }
 }

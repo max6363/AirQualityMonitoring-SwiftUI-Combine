@@ -12,6 +12,7 @@ struct AirQualityMonitoring_SwiftUI_CombineApp: App {
     var body: some Scene {
         WindowGroup {
             CitiesListView()
+                .environmentObject(CitiesListViewModel(with: DataProvider()))
         }
     }
 }

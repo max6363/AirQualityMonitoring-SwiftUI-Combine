@@ -11,22 +11,6 @@ struct CityDataRow: View {
     
     @Binding var city: CityData
     
-    func airQuality() -> AirQualityIndexClassification {
-        return AirQualityIndexClassifier
-            .classifyAirQualityIndex(aqi: self.city.aqi)
-    }
-    
-    func aqiColor() -> Color {
-        return AirQualityIndexInfoClassifier
-            .color(index: self.airQuality())
-            .suColor
-    }
-    
-    func aqiDescriptionText() -> String {
-        return AirQualityIndexInfoClassifier
-            .text(index: self.airQuality())
-    }
-    
     var body: some View {
         HStack {
             ZStack (alignment: .leading) {
@@ -38,27 +22,8 @@ struct CityDataRow: View {
                     Text(city.name)
                         .font(.system(size: 22, weight: .medium, design: .default))
                     
-                    HStack {
-                        Text(String(format: "%.2f", city.aqi))
-                            .font(.system(size: 18, weight: .medium, design: .default))
-
-                        Circle()
-                            .foregroundColor(.black)
-                            .frame(width: 3, height: 3)
-                        
-                        Circle()
-                            .foregroundColor(self.aqiColor())
-                            .frame(width: 15, height: 15)
-                            .cornerRadius(7.5)
-                            .shadow(color: .black, radius: 0.5, x: 0, y: 0)
-                        
-                        Circle()
-                            .foregroundColor(.black)
-                            .frame(width: 3, height: 3)
-                        
-                        Text(self.aqiDescriptionText())
-                            .font(.callout)
-                    }
+                    
+                    CityAQIInfoView(city: $city)
                 }
                 .padding(5)                
             }
@@ -79,5 +44,34 @@ struct CityDataRow_Previews: PreviewProvider {
         CityDataRow(city: $cityData)
             .frame(width: .infinity, height: 50)
             .padding()
+    }
+}
+
+struct CityAQIInfoView: View {
+    
+    @Binding var city: CityData
+    
+    var body: some View {
+        HStack {
+            Text(String(format: "%.2f", city.aqi))
+                .font(.system(size: 18, weight: .medium, design: .default))
+
+            Circle()
+                .foregroundColor(.black)
+                .frame(width: 3, height: 3)
+            
+            Circle()
+                .foregroundColor(city.aqiColor)
+                .frame(width: 15, height: 15)
+                .cornerRadius(7.5)
+                .shadow(color: .black, radius: 0.5, x: 0, y: 0)
+            
+            Circle()
+                .foregroundColor(.black)
+                .frame(width: 3, height: 3)
+            
+            Text(city.aqiDescriptionText)
+                .font(.callout)
+        }
     }
 }
