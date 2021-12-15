@@ -16,6 +16,8 @@
 		88418DFA2768851800C0F54D /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88418DF92768851800C0F54D /* DataProvider.swift */; };
 		88418DFD2768858A00C0F54D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88418DFC2768858A00C0F54D /* Constants.swift */; };
 		88418DFF2768A55800C0F54D /* AirQualityIndexClassification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88418DFE2768A55800C0F54D /* AirQualityIndexClassification.swift */; };
+		886F852A2769BC2E00D628CC /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 886F85292769BC2E00D628CC /* SwiftUICharts */; };
+		886F852C2769BDEC00D628CC /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886F852B2769BDEC00D628CC /* DetailView.swift */; };
 		88FE6CE22768CE1100F3B943 /* CityDataRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FE6CE12768CE1100F3B943 /* CityDataRow.swift */; };
 		B9D814D625216FE169597891 /* Pods_AirQualityMonitoring_SwiftUI_Combine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41445A917F99C6BD7361EDBC /* Pods_AirQualityMonitoring_SwiftUI_Combine.framework */; };
 /* End PBXBuildFile section */
@@ -34,6 +36,7 @@
 		88418DF92768851800C0F54D /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		88418DFC2768858A00C0F54D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		88418DFE2768A55800C0F54D /* AirQualityIndexClassification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityIndexClassification.swift; sourceTree = "<group>"; };
+		886F852B2769BDEC00D628CC /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		88FE6CE12768CE1100F3B943 /* CityDataRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDataRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -43,6 +46,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9D814D625216FE169597891 /* Pods_AirQualityMonitoring_SwiftUI_Combine.framework in Frameworks */,
+				886F852A2769BC2E00D628CC /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +98,7 @@
 			children = (
 				88418DF327687CE000C0F54D /* CitiesListView.swift */,
 				88FE6CE12768CE1100F3B943 /* CityDataRow.swift */,
+				886F852B2769BDEC00D628CC /* DetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -159,6 +164,9 @@
 			dependencies = (
 			);
 			name = "AirQualityMonitoring-SwiftUI-Combine";
+			packageProductDependencies = (
+				886F85292769BC2E00D628CC /* SwiftUICharts */,
+			);
 			productName = "AirQualityMonitoring-SwiftUI-Combine";
 			productReference = 88418DDF2768796900C0F54D /* AirQualityMonitoring-SwiftUI-Combine.app */;
 			productType = "com.apple.product-type.application";
@@ -187,6 +195,9 @@
 				Base,
 			);
 			mainGroup = 88418DD62768796900C0F54D;
+			packageReferences = (
+				886F85282769BC2D00D628CC /* XCRemoteSwiftPackageReference "ChartView" */,
+			);
 			productRefGroup = 88418DE02768796900C0F54D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -256,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				88418DFF2768A55800C0F54D /* AirQualityIndexClassification.swift in Sources */,
+				886F852C2769BDEC00D628CC /* DetailView.swift in Sources */,
 				88418DFA2768851800C0F54D /* DataProvider.swift in Sources */,
 				88418DF627687DA200C0F54D /* CitiesListViewModel.swift in Sources */,
 				88418DF827687F9000C0F54D /* CityData.swift in Sources */,
@@ -469,6 +481,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		886F85282769BC2D00D628CC /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = exactVersion;
+				version = 1.5.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		886F85292769BC2E00D628CC /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 886F85282769BC2D00D628CC /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 88418DD72768796900C0F54D /* Project object */;
 }

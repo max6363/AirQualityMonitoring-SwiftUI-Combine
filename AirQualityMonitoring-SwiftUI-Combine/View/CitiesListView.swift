@@ -15,13 +15,24 @@ struct CitiesListView: View {
         NavigationView {
             List {
                 ForEach($modelData.cities) { city in
-                    CityDataRow(city: city)
-                        .listRowSeparator(.hidden)
+                    ZStack {
+                        NavigationLink(destination: DetailView(city: city)) {
+                            EmptyView()
+                                .listRowSeparator(.hidden)
+                        }
+                        .opacity(0.0)
+                        
+                        HStack {
+                            CityDataRow(city: city)
+                        }
+                    }
+                    .listRowSeparator(.hidden)
                 }
             }
             .navigationTitle("City AQIs")
             .listStyle(.plain)
         }
+        .environmentObject(modelData)
     }
 }
 
