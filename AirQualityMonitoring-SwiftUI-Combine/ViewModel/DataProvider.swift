@@ -14,7 +14,7 @@ import Combine
 /// Provides facility to subscribe/unsubscribe to Air Quality Index (Raw Values),
 /// parsing them to data model `CityDataResponse`,
 /// and notify to Subscribers
-class DataProvider: ObservableObject {
+public class DataProvider: ObservableObject {
     
     var citySubscription = CurrentValueSubject<[CityDataResponse], Error>([CityDataResponse]())
     
@@ -59,7 +59,7 @@ extension DataProvider: WebSocketDelegate {
     /// - Parameters:
     ///   - event: a `WebSocketEvent` event obejct with specific type. i.e. success, failures, data etc.
     ///   - client: a `WebSocket`client object
-    func didReceive(event: WebSocketEvent, client: WebSocket) {
+    public func didReceive(event: WebSocketEvent, client: WebSocket) {
         switch event {
             case .connected(let headers):
                 isConnected = true

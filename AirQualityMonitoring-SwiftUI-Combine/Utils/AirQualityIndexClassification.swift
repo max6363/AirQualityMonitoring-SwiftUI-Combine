@@ -9,7 +9,7 @@ import UIKit
 import SwiftUI
 
 /// Air quality classification
-enum AirQualityIndexClassification {
+public enum AirQualityIndexClassification {
     case good
     case satisfactory
     case moderate
@@ -20,7 +20,7 @@ enum AirQualityIndexClassification {
 }
 
 /// Air quality classifier
-class AirQualityIndexClassifier {
+public class AirQualityIndexClassifier {
     
     /// Get `AirQualityIndexClassification`
     ///
@@ -55,7 +55,7 @@ class AirQualityIndexClassifier {
 }
 
 /// Air quality information classifier
-struct AirQualityIndexInfoClassifier {
+public struct AirQualityIndexInfoClassifier {
     
     /// A method to get color indicator based on index
     /// - Parameter index: Air quality index range - `AirQualityIndexClassification`
@@ -121,7 +121,7 @@ struct AirQualityIndexInfoClassifier {
 /// `UIColor` extension
 ///
 /// Helper methods
-extension UIColor {
+public extension UIColor {
     
     /// Initialize `UIColor` from given parameters
     /// - Parameters:
@@ -154,7 +154,7 @@ extension UIColor {
 /// `UIColor` extension
 ///
 /// Helper methods
-extension UIColor {
+public extension UIColor {
     /// The SwiftUI color associated with the receiver.
     var suColor: Color { Color(self) }
 }

@@ -13,7 +13,7 @@ import SwiftUICharts
 ///
 /// A ViewModel to connect View and Model
 /// Get a list of cities
-class CitiesListViewModel: ObservableObject {
+public class CitiesListViewModel: ObservableObject {
         
     /// A public variable as an Array to store `CityData`,
     /// initialized with empty array.
@@ -26,17 +26,17 @@ class CitiesListViewModel: ObservableObject {
     @Published var cityAQIs = [Double](repeating: 0.0, count: 10)
     
     /// A `Set` of subscriptions which are cancellable
-    var subscriptions = Set<AnyCancellable>()
+    public var subscriptions = Set<AnyCancellable>()
     
     /// A `DataProvider` is a Data Source
-    var provider: DataProvider?
+    public var provider: DataProvider?
     
     /// A private variable for the selected city
     private var selectedCityData: CityData?
     
     /// `Init` method
     /// - Parameter dataProvider: a `DataProvider`
-    init(with dataProvider: DataProvider) {
+    public init(with dataProvider: DataProvider) {
         provider = dataProvider
         subscribeToCityAQIData()
         subscribeToCityInformation()
@@ -112,7 +112,7 @@ class CitiesListViewModel: ObservableObject {
     /// A method to select current city when showing a realtime graph on Detail Page.
     ///
     /// - Parameter city: A `CityData` object
-    func setSelectedCity(city: CityData) {
+    public func setSelectedCity(city: CityData) {
         cityAQIs = [Double](repeating: 0.0, count: 10)
         selectedCityData = city
         self.cityAQIs.removeFirst()
@@ -121,7 +121,7 @@ class CitiesListViewModel: ObservableObject {
     }
     
     /// A method to clear all data, selectedCity etc.
-    func clearCityAQIs() {
+    public func clearCityAQIs() {
         selectedCityData = nil
         cityAQIs.removeAll()
         self.objectWillChange.send()

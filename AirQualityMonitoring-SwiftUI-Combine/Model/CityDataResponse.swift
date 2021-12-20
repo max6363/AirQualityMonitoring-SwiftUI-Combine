@@ -8,7 +8,7 @@
 import Foundation
 
 /// A model to parse air quality index values from the Server Data-Stream
-struct CityDataResponse: Codable {
+public struct CityDataResponse: Codable {
     let city: String
     let aqi: Double
 }

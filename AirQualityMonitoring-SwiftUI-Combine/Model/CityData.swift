@@ -12,8 +12,8 @@ import SwiftUI
 /// A model to show this in List
 ///
 /// Confirms to `Identifiable` protocol for the SwiftUI List compatibility
-class CityData: Identifiable {
-    let id: UUID = UUID()
+public class CityData: Identifiable {
+    public let id: UUID = UUID()
     var name: String = ""
     var aqi: Double = 0.0
 }
@@ -21,7 +21,7 @@ class CityData: Identifiable {
 /// `CityData` extension
 ///
 /// Retrieve the other information based on air quality index value
-extension CityData {
+public extension CityData {
     
     /// A variable - to get `AirQualityIndexClassification`
     /// based on air quality index value

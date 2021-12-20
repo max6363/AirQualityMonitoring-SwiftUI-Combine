@@ -8,7 +8,7 @@
 import Foundation
 
 /// A dummy data provider class for SwiftUI Previews
-class DummyDataProvider: DataProvider {
+public class DummyDataProvider: DataProvider {
     let dummyCities: [CityDataResponse] = [
         CityDataResponse(city: "Mumbai", aqi: 49.5),
         CityDataResponse(city: "Delhi", aqi: 299.01),
