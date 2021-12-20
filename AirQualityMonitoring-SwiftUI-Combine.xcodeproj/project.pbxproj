@@ -16,6 +16,9 @@
 		88418DFA2768851800C0F54D /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88418DF92768851800C0F54D /* DataProvider.swift */; };
 		88418DFD2768858A00C0F54D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88418DFC2768858A00C0F54D /* Constants.swift */; };
 		88418DFF2768A55800C0F54D /* AirQualityIndexClassification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88418DFE2768A55800C0F54D /* AirQualityIndexClassification.swift */; };
+		8862CF8127706533003E5BEB /* CityDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8862CF8027706533003E5BEB /* CityDataResponse.swift */; };
+		8862CF8327706A53003E5BEB /* DummyDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8862CF8227706A53003E5BEB /* DummyDataProvider.swift */; };
+		8862CF8527708355003E5BEB /* CityAQIInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8862CF8427708355003E5BEB /* CityAQIInfoView.swift */; };
 		886F852A2769BC2E00D628CC /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 886F85292769BC2E00D628CC /* SwiftUICharts */; };
 		886F852C2769BDEC00D628CC /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886F852B2769BDEC00D628CC /* DetailView.swift */; };
 		88FE6CE22768CE1100F3B943 /* CityDataRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FE6CE12768CE1100F3B943 /* CityDataRow.swift */; };
@@ -36,6 +39,9 @@
 		88418DF92768851800C0F54D /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		88418DFC2768858A00C0F54D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		88418DFE2768A55800C0F54D /* AirQualityIndexClassification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityIndexClassification.swift; sourceTree = "<group>"; };
+		8862CF8027706533003E5BEB /* CityDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDataResponse.swift; sourceTree = "<group>"; };
+		8862CF8227706A53003E5BEB /* DummyDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyDataProvider.swift; sourceTree = "<group>"; };
+		8862CF8427708355003E5BEB /* CityAQIInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityAQIInfoView.swift; sourceTree = "<group>"; };
 		886F852B2769BDEC00D628CC /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		88FE6CE12768CE1100F3B943 /* CityDataRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDataRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,6 +104,7 @@
 			children = (
 				88418DF327687CE000C0F54D /* CitiesListView.swift */,
 				88FE6CE12768CE1100F3B943 /* CityDataRow.swift */,
+				8862CF8427708355003E5BEB /* CityAQIInfoView.swift */,
 				886F852B2769BDEC00D628CC /* DetailView.swift */,
 			);
 			path = View;
@@ -108,6 +115,7 @@
 			children = (
 				88418DF527687DA200C0F54D /* CitiesListViewModel.swift */,
 				88418DF92768851800C0F54D /* DataProvider.swift */,
+				8862CF8227706A53003E5BEB /* DummyDataProvider.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -115,6 +123,7 @@
 		88418DF22768798200C0F54D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8862CF8027706533003E5BEB /* CityDataResponse.swift */,
 				88418DF727687F9000C0F54D /* CityData.swift */,
 			);
 			path = Model;
@@ -269,7 +278,10 @@
 				88418DFF2768A55800C0F54D /* AirQualityIndexClassification.swift in Sources */,
 				886F852C2769BDEC00D628CC /* DetailView.swift in Sources */,
 				88418DFA2768851800C0F54D /* DataProvider.swift in Sources */,
+				8862CF8527708355003E5BEB /* CityAQIInfoView.swift in Sources */,
+				8862CF8127706533003E5BEB /* CityDataResponse.swift in Sources */,
 				88418DF627687DA200C0F54D /* CitiesListViewModel.swift in Sources */,
+				8862CF8327706A53003E5BEB /* DummyDataProvider.swift in Sources */,
 				88418DF827687F9000C0F54D /* CityData.swift in Sources */,
 				88418DFD2768858A00C0F54D /* Constants.swift in Sources */,
 				88418DF427687CE000C0F54D /* CitiesListView.swift in Sources */,

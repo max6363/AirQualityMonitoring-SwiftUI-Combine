@@ -7,8 +7,14 @@
 
 import SwiftUI
 
+/// A `View` to render a row of City information
+///
+/// This is a part of a List of Cities.
 struct CityDataRow: View {
     
+    /// A `@Binding` variable for the city.
+    ///
+    /// The view is rendered when this property is updated.
     @Binding var city: CityData
     
     var body: some View {
@@ -31,6 +37,9 @@ struct CityDataRow: View {
     }
 }
 
+/// A `PreviewProvider` for `CityDataRow`
+///
+/// We can check that the View is rendered as expected
 struct CityDataRow_Previews: PreviewProvider {
     
     @State static var cityData: CityData = {
@@ -44,34 +53,5 @@ struct CityDataRow_Previews: PreviewProvider {
         CityDataRow(city: $cityData)
             .frame(width: .infinity, height: 50)
             .padding()
-    }
-}
-
-struct CityAQIInfoView: View {
-    
-    @Binding var city: CityData
-    
-    var body: some View {
-        HStack {
-            Text(String(format: "%.2f", city.aqi))
-                .font(.system(size: 18, weight: .medium, design: .default))
-
-            Circle()
-                .foregroundColor(.black)
-                .frame(width: 3, height: 3)
-            
-            Circle()
-                .foregroundColor(city.aqiColor)
-                .frame(width: 15, height: 15)
-                .cornerRadius(7.5)
-                .shadow(color: .black, radius: 0.5, x: 0, y: 0)
-            
-            Circle()
-                .foregroundColor(.black)
-                .frame(width: 3, height: 3)
-            
-            Text(city.aqiDescriptionText)
-                .font(.callout)
-        }
     }
 }

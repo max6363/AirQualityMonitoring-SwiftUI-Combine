@@ -8,6 +8,7 @@
 import UIKit
 import SwiftUI
 
+/// Air quality classification
 enum AirQualityIndexClassification {
     case good
     case satisfactory
@@ -18,7 +19,14 @@ enum AirQualityIndexClassification {
     case outOfRange
 }
 
+/// Air quality classifier
 class AirQualityIndexClassifier {
+    
+    /// Get `AirQualityIndexClassification`
+    ///
+    /// Use this method to get classification with the 'Air Quality Index - Double' value
+    /// - Parameter aqi: air quality index value in `Double`
+    /// - Returns: `AirQualityIndexClassification` value. i.e. Good, Satisfactory etc.
     static func classifyAirQualityIndex(aqi: Double) -> AirQualityIndexClassification {
         switch aqi {
         
@@ -46,7 +54,12 @@ class AirQualityIndexClassifier {
     }
 }
 
+/// Air quality information classifier
 struct AirQualityIndexInfoClassifier {
+    
+    /// A method to get color indicator based on index
+    /// - Parameter index: Air quality index range - `AirQualityIndexClassification`
+    /// - Returns: `UIColor` value with provided classification value
     static func color(index: AirQualityIndexClassification) -> UIColor {
         switch index {
        
@@ -74,6 +87,9 @@ struct AirQualityIndexInfoClassifier {
         }
     }
     
+    /// A method to get information text
+    /// - Parameter index: Air quality index range - `AirQualityIndexClassification`
+    /// - Returns: Air quality information text - `String`
     static func text(index: AirQualityIndexClassification) -> String {
         switch index {
        
@@ -102,7 +118,15 @@ struct AirQualityIndexInfoClassifier {
     }
 }
 
+/// `UIColor` extension
+///
+/// Helper methods
 extension UIColor {
+    
+    /// Initialize `UIColor` from given parameters
+    /// - Parameters:
+    ///   - hexString: a given color hexString - `String`
+    ///   - alpha: a given alpha value - `CGFloat`
     convenience init(hexString: String, alpha: CGFloat = 1.0) {
         let hexString: String = hexString.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         let scanner = Scanner(string: hexString)
@@ -127,6 +151,9 @@ extension UIColor {
     }
 }
 
+/// `UIColor` extension
+///
+/// Helper methods
 extension UIColor {
     /// The SwiftUI color associated with the receiver.
     var suColor: Color { Color(self) }

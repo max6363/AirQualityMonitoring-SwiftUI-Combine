@@ -8,9 +8,15 @@
 import SwiftUI
 import SwiftUICharts
 
+/// A `DetailView` to show a realtime graph of Air Quality Index Data of the selected city
 struct DetailView: View {
     
+    /// An `@EnvironmentObject` linked from Parent View
     @EnvironmentObject var modelData: CitiesListViewModel
+    
+    /// A `@Binding` variable for the city
+    ///
+    /// The view is rendered when this property is updated.
     @Binding var city: CityData
     
     let chartStyle = ChartStyle(backgroundColor: .white,
@@ -41,6 +47,10 @@ struct DetailView: View {
     }
 }
 
+
+/// A `PreviewProvider` for `DetailView`
+///
+/// We can check that the View is rendered as expected
 struct DetailView_Previews: PreviewProvider {
     @State static var dummyCity: CityData = {
         let city = CityData()

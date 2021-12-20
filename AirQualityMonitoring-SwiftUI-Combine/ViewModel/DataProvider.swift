@@ -9,13 +9,19 @@ import Foundation
 import Starscream
 import Combine
 
+/// `DataProvider` as an `ObservableObject`
+///
+/// Provides facility to subscribe/unsubscribe to Air Quality Index (Raw Values),
+/// parsing them to data model `CityDataResponse`,
+/// and notify to Subscribers
 class DataProvider: ObservableObject {
     
     var citySubscription = CurrentValueSubject<[CityDataResponse], Error>([CityDataResponse]())
     
     var isConnected: Bool = false
-        
-    var socket: WebSocket? = {
+            
+    /// A private variable of `WebSocket` to create an instance of WebSocket with given server URL-String
+    private var socket: WebSocket? = {
         guard let url = URL(string: ServerConnection.url) else {
             print("can not create URL from: \(ServerConnection.url)")
             return nil
@@ -26,12 +32,14 @@ class DataProvider: ObservableObject {
         var socket = WebSocket(request: request)
         return socket
     }()
-    
+        
+    /// A method to subscribe to the WebSocket
     func subscribe() {
         self.socket?.delegate = self
         self.socket?.connect()
     }
     
+    /// A method to unsubscribe from the WebSocket
     func unsubscribe() {
         self.socket?.disconnect()
     }
@@ -42,8 +50,15 @@ class DataProvider: ObservableObject {
     }
 }
 
+/// `DataProvider` extension
+///
+/// to implement `WebSocketDelegate` - handle response and errors.
 extension DataProvider: WebSocketDelegate {
     
+    /// A callback from WebSocket
+    /// - Parameters:
+    ///   - event: a `WebSocketEvent` event obejct with specific type. i.e. success, failures, data etc.
+    ///   - client: a `WebSocket`client object
     func didReceive(event: WebSocketEvent, client: WebSocket) {
         switch event {
             case .connected(let headers):
@@ -71,7 +86,11 @@ extension DataProvider: WebSocketDelegate {
                 handleError(error: error)
             }
     }
-    
+        
+    /// A method to handle response received from WebSocket.
+    /// Parse the response in `CityDataResponse` Array and send to Subscribers.
+    ///
+    /// - Parameter text: a text recieved from WebSocket in `String`.
     private func handleText(text: String) {
         let jsonData = Data(text.utf8)
         let decoder = JSONDecoder()
@@ -90,27 +109,14 @@ extension DataProvider: WebSocketDelegate {
             print(error.localizedDescription)
         }
     }
-    
+        
+    /// A private method to handle error received from the WebSocket.
+    /// Send Error object to Subscribers.
+    ///
+    /// - Parameter error: An `Error` object
     private func handleError(error: Error?) {
         if let e = error {
             citySubscription.send(completion: .failure(e))
         }
-    }
-}
-
-
-class DummyDataProvider: DataProvider {
-    let dummyCities: [CityDataResponse] = [
-        CityDataResponse(city: "Mumbai", aqi: 49.5),
-        CityDataResponse(city: "Delhi", aqi: 299.01),
-        CityDataResponse(city: "Kolkata", aqi: 125.969),
-        CityDataResponse(city: "Chennai", aqi: 343.08),
-        CityDataResponse(city: "Bengaluru", aqi: 425.47),
-        CityDataResponse(city: "Lucknow", aqi: 75.6),
-        CityDataResponse(city: "Pune", aqi: 550),
-    ]
-    override init() {
-        super.init()
-        self.citySubscription.send(dummyCities)
     }
 }
