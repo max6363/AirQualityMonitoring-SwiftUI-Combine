@@ -1,0 +1,61 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/minhaz/Desktop/Projects/minhaz/assignments/Swift-Learning/AirQualityMonitoring-SwiftUI-Combine/AirQualityMonitoring-SwiftUI-Combine/Utils/AirQualityIndexClassification.swift",
+      "line": 13,
+      "symbol": "AirQualityIndexClassification.good",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/minhaz/Desktop/Projects/minhaz/assignments/Swift-Learning/AirQualityMonitoring-SwiftUI-Combine/AirQualityMonitoring-SwiftUI-Combine/Utils/AirQualityIndexClassification.swift",
+      "line": 14,
+      "symbol": "AirQualityIndexClassification.satisfactory",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/minhaz/Desktop/Projects/minhaz/assignments/Swift-Learning/AirQualityMonitoring-SwiftUI-Combine/AirQualityMonitoring-SwiftUI-Combine/Utils/AirQualityIndexClassification.swift",
+      "line": 15,
+      "symbol": "AirQualityIndexClassification.moderate",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/minhaz/Desktop/Projects/minhaz/assignments/Swift-Learning/AirQualityMonitoring-SwiftUI-Combine/AirQualityMonitoring-SwiftUI-Combine/Utils/AirQualityIndexClassification.swift",
+      "line": 16,
+      "symbol": "AirQualityIndexClassification.poor",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/minhaz/Desktop/Projects/minhaz/assignments/Swift-Learning/AirQualityMonitoring-SwiftUI-Combine/AirQualityMonitoring-SwiftUI-Combine/Utils/AirQualityIndexClassification.swift",
+      "line": 17,
+      "symbol": "AirQualityIndexClassification.veryPoor",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/minhaz/Desktop/Projects/minhaz/assignments/Swift-Learning/AirQualityMonitoring-SwiftUI-Combine/AirQualityMonitoring-SwiftUI-Combine/Utils/AirQualityIndexClassification.swift",
+      "line": 18,
+      "symbol": "AirQualityIndexClassification.severe",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/minhaz/Desktop/Projects/minhaz/assignments/Swift-Learning/AirQualityMonitoring-SwiftUI-Combine/AirQualityMonitoring-SwiftUI-Combine/Utils/AirQualityIndexClassification.swift",
+      "line": 19,
+      "symbol": "AirQualityIndexClassification.outOfRange",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/minhaz/Desktop/Projects/minhaz/assignments/Swift-Learning/AirQualityMonitoring-SwiftUI-Combine/AirQualityMonitoring-SwiftUI-Combine/Utils/Constants.swift",
+      "line": 12,
+      "symbol": "ServerConnection.url",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/minhaz/Desktop/Projects/minhaz/assignments/Swift-Learning/AirQualityMonitoring-SwiftUI-Combine"
+}

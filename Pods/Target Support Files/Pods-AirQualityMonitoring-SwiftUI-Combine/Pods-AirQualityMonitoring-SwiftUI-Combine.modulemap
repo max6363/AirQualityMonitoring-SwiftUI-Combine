@@ -1,6 +1,0 @@
-framework module Pods_AirQualityMonitoring_SwiftUI_Combine {
-  umbrella header "Pods-AirQualityMonitoring-SwiftUI-Combine-umbrella.h"
-
-  export *
-  module * { export * }
-}
