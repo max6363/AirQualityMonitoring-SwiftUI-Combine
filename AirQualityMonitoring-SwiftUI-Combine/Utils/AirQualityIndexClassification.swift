@@ -8,14 +8,30 @@
 import UIKit
 import SwiftUI
 
-/// Air quality classification
+/// Air quality classification.
+///
+/// Classification based on the Air Quality impacting on health.
 public enum AirQualityIndexClassification {
+    
+    /// Air quality is satisfactory, and air pollution poses little or no risk.
     case good
+    
+    /// Air quality is acceptable. However, there may be a risk for some people, particularly those who are unusually sensitive to air pollution.
     case satisfactory
+    
+    /// Members of sensitive groups may experience health effects. The general public is less likely to be affected.
     case moderate
+    
+    /// Some members of the general public may experience health effects; members of sensitive groups may experience more serious health effects.
     case poor
+    
+    /// Health alert: The risk of health effects is increased for everyone.
     case veryPoor
+    
+    /// Health warning of emergency conditions: everyone is more likely to be affected.
     case severe
+    
+    /// Out of Range
     case outOfRange
 }
 

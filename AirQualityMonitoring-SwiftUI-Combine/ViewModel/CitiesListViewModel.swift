@@ -11,6 +11,7 @@ import SwiftUICharts
 
 /// `CitiesListViewModel` as an `ObservableObject`
 ///
+///
 /// A ViewModel to connect View and Model
 /// Get a list of cities
 public class CitiesListViewModel: ObservableObject {
