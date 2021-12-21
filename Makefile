@@ -4,6 +4,7 @@ documentation:
 	-workspace,AirQualityMonitoring-SwiftUI-Combine.xcworkspace,-scheme,AirQualityMonitoring-SwiftUI-Combine \
 	--theme apple \
 	--output ./docs \
-	--documentation=./*.md
+	--documentation=./*.md \
+	--author "Minhaz Panara"
 
 	@rm -rf ./build
