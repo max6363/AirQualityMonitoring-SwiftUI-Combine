@@ -7,6 +7,7 @@
 
 import Foundation
 
-enum ServerConnection {
+/// Server URL String information
+public enum ServerConnection {
     public static var url: String = "ws://city-ws.herokuapp.com"
 }

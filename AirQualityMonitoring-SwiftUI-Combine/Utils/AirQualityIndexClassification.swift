@@ -8,17 +8,41 @@
 import UIKit
 import SwiftUI
 
-enum AirQualityIndexClassification {
+/// Air quality classification.
+///
+/// Classification based on the Air Quality impacting on health.
+public enum AirQualityIndexClassification {
+    
+    /// Air quality is satisfactory, and air pollution poses little or no risk.
     case good
+    
+    /// Air quality is acceptable. However, there may be a risk for some people, particularly those who are unusually sensitive to air pollution.
     case satisfactory
+    
+    /// Members of sensitive groups may experience health effects. The general public is less likely to be affected.
     case moderate
+    
+    /// Some members of the general public may experience health effects; members of sensitive groups may experience more serious health effects.
     case poor
+    
+    /// Health alert: The risk of health effects is increased for everyone.
     case veryPoor
+    
+    /// Health warning of emergency conditions: everyone is more likely to be affected.
     case severe
+    
+    /// Out of Range
     case outOfRange
 }
 
-class AirQualityIndexClassifier {
+/// Air quality classifier
+public class AirQualityIndexClassifier {
+    
+    /// Get `AirQualityIndexClassification`
+    ///
+    /// Use this method to get classification with the 'Air Quality Index - Double' value
+    /// - Parameter aqi: air quality index value in `Double`
+    /// - Returns: `AirQualityIndexClassification` value. i.e. Good, Satisfactory etc.
     static func classifyAirQualityIndex(aqi: Double) -> AirQualityIndexClassification {
         switch aqi {
         
@@ -46,7 +70,12 @@ class AirQualityIndexClassifier {
     }
 }
 
-struct AirQualityIndexInfoClassifier {
+/// Air quality information classifier
+public struct AirQualityIndexInfoClassifier {
+    
+    /// A method to get color indicator based on index
+    /// - Parameter index: Air quality index range - `AirQualityIndexClassification`
+    /// - Returns: `UIColor` value with provided classification value
     static func color(index: AirQualityIndexClassification) -> UIColor {
         switch index {
        
@@ -74,6 +103,9 @@ struct AirQualityIndexInfoClassifier {
         }
     }
     
+    /// A method to get information text
+    /// - Parameter index: Air quality index range - `AirQualityIndexClassification`
+    /// - Returns: Air quality information text - `String`
     static func text(index: AirQualityIndexClassification) -> String {
         switch index {
        
@@ -102,7 +134,15 @@ struct AirQualityIndexInfoClassifier {
     }
 }
 
-extension UIColor {
+/// `UIColor` extension
+///
+/// Helper methods
+public extension UIColor {
+    
+    /// Initialize `UIColor` from given parameters
+    /// - Parameters:
+    ///   - hexString: a given color hexString - `String`
+    ///   - alpha: a given alpha value - `CGFloat`
     convenience init(hexString: String, alpha: CGFloat = 1.0) {
         let hexString: String = hexString.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         let scanner = Scanner(string: hexString)
@@ -127,7 +167,10 @@ extension UIColor {
     }
 }
 
-extension UIColor {
+/// `UIColor` extension
+///
+/// Helper methods
+public extension UIColor {
     /// The SwiftUI color associated with the receiver.
     var suColor: Color { Color(self) }
 }

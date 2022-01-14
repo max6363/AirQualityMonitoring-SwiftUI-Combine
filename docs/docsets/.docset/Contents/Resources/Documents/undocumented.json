@@ -1,0 +1,12 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/minhaz/Desktop/Projects/minhaz/assignments/Swift-Learning/AirQualityMonitoring-SwiftUI-Combine/AirQualityMonitoring-SwiftUI-Combine/Utils/Constants.swift",
+      "line": 12,
+      "symbol": "ServerConnection.url",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/minhaz/Desktop/Projects/minhaz/assignments/Swift-Learning/AirQualityMonitoring-SwiftUI-Combine"
+}
